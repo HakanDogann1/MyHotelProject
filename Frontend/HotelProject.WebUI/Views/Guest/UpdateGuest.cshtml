@@ -1,0 +1,25 @@
+﻿@model UpdateGuestViewModel
+@{
+    ViewData["Title"] = "UpdateGuest";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="GuestID"/>
+    <label>Ad</label>
+    <input type="text" asp-for="GuestName" class="form-control" />
+    @Html.ValidationMessageFor(x => x.GuestName, null, new {@class = "invalid-feedback d-block"})
+    <br />
+    <label>Soyad</label>
+    <input type="text" asp-for="GuestSurname" class="form-control" />
+    @Html.ValidationMessageFor(x => x.GuestSurname, null, new {@class = "invalid-feedback d-block"})
+    <br />
+    <label>Şehir</label>
+    <input type="text" asp-for="GuestCity" class="form-control" />
+    @Html.ValidationMessageFor(x => x.GuestCity, null, new {@class = "invalid-feedback d-block"})
+    <br />
+    <button class="btn btn-outline-success">Ekle</button>
+</form>
+
+
+

@@ -1,0 +1,39 @@
+﻿@model List<BookingGetCityViewModel>
+@{
+    Layout = null;
+    int count = 0;
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <br />
+    @using (Html.BeginForm("Index", "BookingGetCity", FormMethod.Post))
+    {
+        <label>Şehir Adı</label>
+        <input type="text" name="cityName" class="form-control"/>
+        <br />
+        <br />
+        <button class="btn btn-outline-success">ID Bilgisini getir</button>
+    }
+    <br />
+    <br />
+    <table class="table table-bordered">
+        <tr>
+           
+            <th>ID</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@item.dest_id</td>
+            </tr>
+        }
+    </table>
+    <br />
+    <br />
+    <br />
+    <a href="/GetHotelByLocation/Index/" class="btn btn-outline-dark">Otelleri getir</a>
+</div>

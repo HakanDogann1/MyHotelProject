@@ -1,0 +1,13 @@
+﻿@model AppRole
+@{
+    ViewData["Title"] = "AddRole";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>Oda Numarası</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    <button class="btn btn-outline-success">Ekle</button>
+</form>
+

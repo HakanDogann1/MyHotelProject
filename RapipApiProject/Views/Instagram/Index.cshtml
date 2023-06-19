@@ -1,0 +1,13 @@
+﻿@model InstagramViewModel
+@{
+    Layout = null;
+}
+@using(Html.BeginForm("Index","Instagram",FormMethod.Post)){
+    <label>Kullanıcı Adı</label>
+    <input type="text" name="username" class="form-control"/>
+    <button type="text" class="btn btn-dark">Tamam</button>
+}
+<br />
+<br />
+<label>@Model.following</label>
+<label>@Model.followers</label>

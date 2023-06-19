@@ -1,0 +1,48 @@
+﻿@model List<AboutListViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Rezervasyonlar</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Başlık 1</th>
+                    <th>Başlık 2</th>
+                    <th>İçerik</th>
+                    <th>Kadro</th>
+                    <th>Oda Sayısı</th>
+                    <th>Müşteri Sayısı</th>
+                    <th>Güncelle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <th>@count</th>
+                        <td>@item.AboutTitle1</td>
+                        <td>@item.AboutTitle2</td>
+                        <td>@item.AboutContent</td>
+                        <td>@item.StaffCount</td>
+                        <td>@item.RoomCount</td>
+                        <td>@item.CustomerCount</td>
+                        <td><a href="/About/UpdateAbout/@item.AboutID" class="btn btn-outline-warning">Güncelle</a></td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
