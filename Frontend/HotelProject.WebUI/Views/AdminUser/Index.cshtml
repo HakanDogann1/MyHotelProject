@@ -10,7 +10,6 @@
         <th>Rol Adı</th>
         <th>Sil</th>
         <th>Güncelle</th>
-        <th>Rolleri Gör</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -19,7 +18,6 @@
             <td>@item.Name</td>
             <td><a href="/AdminUser/DeleteRole/@item.Id" class="btn btn-outline-danger">Sil</a></td>
             <td><a href="/AdminUser/UpdateRole/@item.Id" class="btn btn-outline-warning">Güncelle</a></td>
-            <td><a href="/AdminRoleUser/Index/@item.Id" class="btn btn-outline-warning">Rolleri Gör</a></td>
         </tr>
     }
 </table>

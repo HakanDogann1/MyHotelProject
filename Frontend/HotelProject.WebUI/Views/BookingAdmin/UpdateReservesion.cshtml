@@ -1,0 +1,36 @@
+﻿@model ApprovedDto
+@{
+    ViewData["Title"] = "UpdateReservesion";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="BookingID"/>
+    <label>Ad</label>
+    <input type="text" asp-for="Name" class="form-control"/>
+    <br />
+    <label>Mail</label>
+    <input type="text" asp-for="Mail" class="form-control"/>
+    <br />
+    <label>Giriş Tarihi</label>
+    <input type="Date" asp-for="Checkin" class="form-control" />
+    <br />
+    <label>Çıkış Tarihi</label>
+    <input type="Date" asp-for="CheckOut" class="form-control" />
+    <br />
+    <label>Yetişkin Sayısı</label>
+    <input type="number" asp-for="AdultCount" class="form-control" />
+    <br />
+    <label>Çocuk Sayısı</label>
+    <input type="number" asp-for="ChildCount" class="form-control" />
+    <br />
+    <label>İçerik</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>Durum</label>
+    <input type="text" asp-for="Status" class="form-control" />
+    <br />
+
+    <button class="btn btn-outline-success">Kaydet</button>
+</form>
+

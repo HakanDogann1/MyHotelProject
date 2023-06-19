@@ -18,9 +18,14 @@ namespace HotelProject.WebUI.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
+        public IActionResult Index()
+        {
+            var users=_userManager.Users.ToList();
+            return View(users);
+        }
 
         [HttpGet]
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> GetRole(int id)
         {
             var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
             TempData["userid"]=id;
@@ -39,7 +44,7 @@ namespace HotelProject.WebUI.Controllers
             return View(listViewModels);
         }
         [HttpPost]
-        public async Task<IActionResult> Index(List<UserRoleListViewModel> userRoleListViewModels)
+        public async Task<IActionResult> GetRole(List<UserRoleListViewModel> userRoleListViewModels)
         {
             var id =(int)TempData["userid"];
             var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
@@ -54,7 +59,7 @@ namespace HotelProject.WebUI.Controllers
                     await _userManager.RemoveFromRoleAsync(user, role.Name);
                 }
             }
-           return RedirectToAction("Index","AdminUser");
+           return RedirectToAction("Index","AdminRoleUser");
         }
     }
 }

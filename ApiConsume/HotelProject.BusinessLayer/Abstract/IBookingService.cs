@@ -12,5 +12,7 @@ namespace HotelProject.BusinessLayer.Abstract
         public void TBookingStatusApproved(Booking booking);
         public void TBookingStatusApproved2(int id);
         public int TGetBookingCount();
+        void TBookingStatusApproved3(int id);
+        public void TBookingStatusApproved4(int id);
     }
 }

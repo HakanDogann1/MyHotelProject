@@ -27,7 +27,7 @@ namespace HotelProject.WebUI.Controllers
             var value = await _signInManager.PasswordSignInAsync(loginViewModel.UserName, loginViewModel.Password, false, false);
             if(value.Succeeded)
             {
-                return RedirectToAction("Index", "Service");
+                return RedirectToAction("Index", "Dashboard");
             }
             return View();
         }

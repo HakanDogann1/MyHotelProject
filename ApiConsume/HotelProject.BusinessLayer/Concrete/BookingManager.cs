@@ -18,6 +18,11 @@ namespace HotelProject.BusinessLayer.Concrete
             _bookingDal = bookingDal;
         }
 
+        public void TBookingStatusApproved4(int id)
+        {
+            _bookingDal.BookingStatusApproved4(id);
+        }
+
         public void TAdd(Booking entity)
         {
             _bookingDal.Add(entity);
@@ -31,6 +36,11 @@ namespace HotelProject.BusinessLayer.Concrete
         public void TBookingStatusApproved2(int id)
         {
             _bookingDal.BookingStatusApproved2(id);
+        }
+
+        public void TBookingStatusApproved3(int id)
+        {
+            _bookingDal.BookingStatusApproved3(id);
         }
 
         public void TDelete(Booking entity)
